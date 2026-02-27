@@ -1,7 +1,0 @@
-streamlit
-pandas
-numpy
-faiss-cpu
-nltk
-scikit-learn
-
