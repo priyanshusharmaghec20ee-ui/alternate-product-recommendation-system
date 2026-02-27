@@ -1,3 +1,4 @@
+%%writefile app.py
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -32,11 +33,11 @@ lem = WordNetLemmatizer()
 # Define preprocessing function
 def preprocess_text(text):
     text = str(text).lower()
-    text = re.sub(r'[^a-zA-Z\s]', '', text)
+    text = re.sub(r'[^a-zA-Z\\s]', '', text)
     words = text.split()
     words = [i for i in words if i not in s_w]
     words = [lem.lemmatize(i) for i in words]
-    return " ".join(words)
+    return \" \".join(words)
 
 # Define function to get product embedding for a query
 def get_product_embedding(words):
@@ -86,7 +87,7 @@ if st.button('Get Recommendations'):
             col1, col2 = st.columns([1, 4])
             with col1:
                 if row['image_url']:
-                    st.image(row['image_url'], width=100)
+                    st.markdown(f"<img src='{row['image_url']}' width='100'>", unsafe_allow_html=True)
                 else:
                     st.write("No Image")
             with col2:
