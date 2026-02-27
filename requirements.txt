@@ -1,0 +1,7 @@
+pandas
+numpy
+seaborn
+matplotlib
+nltk
+gensim
+faiss-cpu
