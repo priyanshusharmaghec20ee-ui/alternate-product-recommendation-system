@@ -5,3 +5,7 @@ matplotlib
 nltk
 gensim
 faiss-cpu
+fastapi
+uvicorn
+starlette
+requests
