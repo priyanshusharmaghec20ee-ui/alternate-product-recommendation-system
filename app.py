@@ -87,6 +87,7 @@ if st.button('Get Recommendations'):
             with col1:
                 if row['image_url']:
                     st.markdown(f"<img src='{row['image_url']}' width='100'>", unsafe_allow_html=True)
+                    st.write(f"Image URL: {row['image_url']}") # Add this line for debugging
                 else:
                     st.write("No Image")
             with col2:
